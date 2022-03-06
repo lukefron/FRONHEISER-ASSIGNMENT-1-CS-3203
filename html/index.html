@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+ 
+ <head>
+    <!-- Importing the jQuery -->
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+
+</head>
+
+<script>
+    function makePUTrequest() {
+        $.ajax({
+            url: 'http://localhost:3000/tweets/changeScreenName/:name/:screen_name',
+            type: 'PUT',
+            success: function (result) {
+                res.send("Updated");
+            }
+        });
+    }
+  
+    function makeDELETErequest() {
+        $.ajax({
+            url: 'http://localhost:3000/tweets/delete/:id',
+            type: 'DELETE',
+            success: function (result) {
+                res.send("Deleted");
+            }
+        });
+    }
+</script>
+
+<h1>Assignment 1</h1>
+
+<label for="team_name">1. Get all tweets (created time ("created_at"), and tweet text ("text")) in the file </label>
+<form action="/tweets/" method="get">
+    <input type="submit" value="Get All Tweets">
+</form>
+
+<label for="team_name">2. Get all users' ID: </label>
+<form action="/tweets/users" method="get">
+    <input type="submit" value="Get User ID's">
+</form>
+
+<label for="id">3. Get the details of tweet (text, created time), given ID </label>
+<form action="/tweets/getDetails/:id" method="get">
+  <input id="id" type = "text" name="id" value = "insert tweet id here">
+<input type="submit" value="Get Tweet Details">  
+</form>
+
+    <label for="tweet_text">4. Create a tweet (given text and ID) </label>
+ <form action="/tweets/:id/:text" method="post">
+    <input id="id" type="text" name="id" value="Insert tweet id here.">
+    <input id="text" type="text" name="text" value="Insert tweet text here.">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+    <label for="real">5. Update a screen_name (given name and new screen_name) </label>
+ <form onsubmit=makePUTrequest()>
+    <input id="name" type="text" name="name" value="Insert name.">
+    <input id="screen_name" type="text" name="screen_name" value="Insert new screen name here.">
+    <input type="submit" value="Submit">
+</form>
+
+
+<label for="delete_tweet">6. Delete a tweet (given ID)</label>
+<form onsubmit = makeDELETErequest()>
+    <input id="id" type="text" name="id" value="Insert id.">
+    <input type="submit" value="submit">
+</form>
+
+
+
+
+<!-- <form action="/tweets/delete/:id" method="delete">
+  <input type="text" id="delete_tweet" name="delete_tweet">
+<input type="submit" value="Delete Tweet">  
+</form> -->
+
+
+
+
+
+
+
+</html>
