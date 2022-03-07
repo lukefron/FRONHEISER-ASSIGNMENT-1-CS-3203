@@ -3,6 +3,7 @@
 Mock Twitter API with ExpressJS and JSON data backend.
 
 Author: Luke Fronheiser
+
 Date: 27 Feb 2022
 
 Technologies used:
@@ -13,13 +14,13 @@ Technologies used:
 
 
 
-This mock API can be downloaded and opened into a VS Code IDE.
-Open a terminal and navigate to the root download folder.
-Then run the command
+This mock API pulls "tweet" data from a JSON file and enables standard CRUD operations on them through a static html webpage. 
 
-" node app.js "
+To start this project:
 
-and the app will be visible at the directory
+1) Clone the repoistory into a new folder and open the folder in a VS Code IDE.
+2) Open a terminal and run the command " node app.js "
+3) Open a browser at "http://localhost:3000/" and view the API!
 
-"http://localhost:3000/"
+
 
