@@ -1,3 +1,5 @@
+#ASSIGNMENT 1 CS 3203 Luke Fronheiser#
+
 Mock Twitter API with ExpressJS and JSON data backend.
 
 Author: Luke Fronheiser
